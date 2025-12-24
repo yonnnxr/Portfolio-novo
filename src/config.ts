@@ -1,5 +1,5 @@
 export const BASE = '';
-export const SITE = 'https://carloseduardoborges.pages.dev';
+export const SITE = 'https://yonnnxr.github.io';
 export const SITE_FAVICON = '💻';
 
 export const BASE_COLOR = 'zinc';
