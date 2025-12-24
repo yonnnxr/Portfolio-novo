@@ -20,8 +20,8 @@ const projectImages = project.images && project.images.length > 0
   : [];
 
 // Carregar thumbnail se disponível
-const thumbnailImage = project.thumbnail 
-  ? (images[project.thumbnail] ? (await images[project.thumbnail]()).default : null)
+const thumbnailImage = project.thumbnail && images[project.thumbnail]
+  ? (await (images[project.thumbnail] as () => Promise<{ default: any }>)()).default
   : null;
 ---
 
