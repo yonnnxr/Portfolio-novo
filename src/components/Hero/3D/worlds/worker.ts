@@ -27,9 +27,9 @@ onmessage = function (e) {
     const oceanColors = oceanGeometry.getAttribute("color").array.buffer;
     const oceanNormals = oceanGeometry.getAttribute("normal").array.buffer;
     const oceanMorphPositions =
-      oceanGeometry.morphAttributes.position[0].array.buffer;
+      oceanGeometry.morphAttributes.position?.[0]?.array.buffer;
     const oceanMorphNormals =
-      oceanGeometry.morphAttributes.normal[0].array.buffer;
+      oceanGeometry.morphAttributes.normal?.[0]?.array.buffer;
 
     postMessage(
       {
