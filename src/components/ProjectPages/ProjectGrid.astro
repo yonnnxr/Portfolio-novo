@@ -18,6 +18,11 @@ const projectImages = project.images && project.images.length > 0
       })
     ).then(imgs => imgs.filter(Boolean))
   : [];
+
+// Carregar thumbnail se disponível
+const thumbnailImage = project.thumbnail 
+  ? (images[project.thumbnail] ? await images[project.thumbnail]() : null)
+  : null;
 ---
 
 <div class="text-white">
@@ -67,11 +72,11 @@ const projectImages = project.images && project.images.length > 0
             />
           </div>
         </div>
-      ) : project.thumbnail ? (
+      ) : thumbnailImage ? (
         <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:max-w-5xl lg:px-8">
           <div class="overflow-hidden rounded-3xl border border-white/10">
             <Image
-              src={project.thumbnail}
+              src={thumbnailImage}
               alt={project.name}
               width={1200}
               height={800}
